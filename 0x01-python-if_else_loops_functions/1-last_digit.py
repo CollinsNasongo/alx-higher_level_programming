@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-last = int(str(number)[-1])
+if (number < 0):
+    num = number * -1
+    last = num % 10
+else:
+    last = num % 10
 if (number < 0):
     last = last * -1
     if (last == 0):
