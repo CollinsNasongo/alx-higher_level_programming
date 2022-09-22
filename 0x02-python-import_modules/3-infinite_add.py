@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-import sys
-def add_args():
-    """Get number of arguments passed
+if __name__ == "__main__":
+    import sys
 
-    Returns:
-        prints number of arguments
-    """
-    arg_list = sys.argv
-    ln = len(arg_list)
-    result = 0
-    for i in range(1, ln):
-        result = result + int(arg_list[i])
+    def add_args():
+        arg_list = sys.argv
+        ln = len(arg_list)
+        result = 0
 
-    print("{:d}".format(result))
-add_args()
+        for i in range(1, ln):
+            result = result + int(arg_list[i])
+
+        print("{:d}".format(result))
+
+    add_args()
