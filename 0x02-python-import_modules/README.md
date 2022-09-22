@@ -8,7 +8,7 @@
 * How to use command line arguments with your Python programs
 ## Tasks
 ### 0. a program that imports the function def add(a, b): from the file add_0.py and prints the result of the addition 1 + 2 = 3
-![Task_0](https://mega.nz/file/YUASUIhA#JccQYrsgT2Dztq_VtlmaFGwtL17JYEtzW7jbphmqi-s)
+![Task_0](https://drive.google.com/file/d/1hSclS8hIcvw44bFSPwu5CjpVPv_Ey02D/view?usp=sharing)
 ### 1. a program that imports functions from the file calculator_1.py, does some Maths, and prints the result.
 ### 2. a program that prints the number of and the list of its arguments.
 ### 3. a program that prints the result of the addition of all arguments
