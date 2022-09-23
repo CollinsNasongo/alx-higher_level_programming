@@ -14,27 +14,41 @@
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *new = malloc(sizeof(listint_t));
-	listint_t *next_val = (*head)->next;
+	__attribute__((unused)) listint_t *next_val = (*head)->next;
 	listint_t *current = *head;
 
-	if (new == NULL || head == NULL)
-		return (NULL);
+	new->n = number;
 
+	if (current == NULL)
+	{
+		new->next = NULL;
+		current = new;
+		return (new);
+	}
 	while (*head != NULL)
 	{
-		if (next_val->n < number)
+		if (current->next == NULL && current->n < number)
 		{
-			current = current->next;
-			next_val = next_val->next;
-		}
-		else
-		{
-			new->n = number;
-			new->next = next_val;
+			new->next = NULL;
 			current->next = new;
 			return (new);
 		}
+		else
+		{
+			if (next_val->n < number)
+			{
+				current = current->next;
+				next_val = next_val->next;
+			}
+			else
+			{
+				new->next = next_val;
+				current->next = new;
+				return (new);
+			}
+		}
 	}
+	free_listint(new);
 	return (NULL);
 }
 
