@@ -60,8 +60,6 @@ int get_num(listint_t *h, int idx)
 
 	if (idx > (len - 1))
 		return (0);
-	if (idx == 0)
-		return (current->n);
 	while (h)
 	{
 		if (idx == count)
