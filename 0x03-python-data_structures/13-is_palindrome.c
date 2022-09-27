@@ -4,14 +4,14 @@
 /**
  * is_palindrome - checks if singly linked list is a palindrome
  *
- * head: double pointer to the list
+ * @head: double pointer to the list
  *
  * Return: 1 if true and 0 otherwise
  */
 int is_palindrome(listint_t **head)
 {
 	int len = get_len(*head);
-	int mid = len/2;
+	int mid = len / 2;
 	int front_idx = 0;
 	int back_idx = len - 1;
 
@@ -19,11 +19,8 @@ int is_palindrome(listint_t **head)
 	{
 		if (get_num(*head, front_idx) != get_num(*head, back_idx))
 			return (0);
-		else
-		{
-			front_idx++;
-			back_idx--;
-		}
+		front_idx++;
+		back_idx--;
 	}
 	return (1);
 }
@@ -38,6 +35,7 @@ int is_palindrome(listint_t **head)
 int get_len(const listint_t *h)
 {
 	int len = 0;
+
 	while (h != NULL)
 	{
 		len++;
@@ -64,18 +62,12 @@ int get_num(listint_t *h, int idx)
 		return (0);
 	if (idx == 0)
 		return (current->n);
-	else
+	while (h)
 	{
-		while (h)
-		{
-			if (idx == count)
-				return (current->n);
-			else
-			{
-				count++;
-				current = current->next;
-			}
-		}
+		if (idx == count)
+			return (current->n);
+		count++;
+		current = current->next;
 	}
 	return (0);
 }
