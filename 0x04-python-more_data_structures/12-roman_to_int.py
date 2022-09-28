@@ -2,23 +2,10 @@
 def roman_to_int(roman_string):
     if (len(roman_string) == 0 or roman_string is None):
         return 0
+
     R_str = roman_string.upper()
-    ln = len(R_str)
     num = 0
-    if (ln == 1):
-        num = add_rom(R_str)
-    elif (R_str[-1] == "X" and R_str[-2] == "I"):
-        new_str = R_str[:-2]
-        num = add_rom(new_str) + 9
-    elif (R_str[-1] == "V" and R_str[-2] == "I"):
-        new_str = R_str[:-2]
-        num = add_rom(new_str) + 4
-    else:
-        num = add_rom(R_str)
-    return num
-
-
-def add_rom(s):
+    i = 0
     conv_dict = {
             "I": 1,
             "V": 5,
@@ -28,10 +15,19 @@ def add_rom(s):
             "D": 500,
             "M": 1000
             }
-    num = 0
-    for i in s:
-        if i in list(conv_dict):
-            num = num + conv_dict[i]
+
+    while (i < len(R_str)):
+        if ((i + 1) != len(R_str)):
+            if conv_dict[R_str[i]] < conv_dict[R_str[i + 1]]:
+                num = num - conv_dict[R_str[i]]
+                i += 1
+                continue
+            else:
+                num = num + conv_dict[R_str[i]]
+                i += 1
+                continue
         else:
-            return 0
+            num = num + conv_dict[R_str[i]]
+            i += 1
+
     return num
