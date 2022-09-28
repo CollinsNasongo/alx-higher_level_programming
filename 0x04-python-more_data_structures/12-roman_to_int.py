@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
     if (len(roman_string) == 0 or roman_string is None):
-        return None
+        return 0
     R_str = roman_string.upper()
     ln = len(R_str)
     num = 0
