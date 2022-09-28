@@ -17,6 +17,8 @@ def roman_to_int(roman_string):
             }
 
     while (i < len(R_str)):
+        if (R_str[i] not in list(conv_dict)):
+            return 0
         if ((i + 1) != len(R_str)):
             if conv_dict[R_str[i]] < conv_dict[R_str[i + 1]]:
                 num = num - conv_dict[R_str[i]]
