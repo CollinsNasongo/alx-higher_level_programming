@@ -6,10 +6,9 @@ def safe_print_list(my_list=[], x=0):
         while(counter < x):
             print(f"{my_list[counter]}", end='')
             counter += 1
-        print()
-    except:
+    except IndexError:
         print()
         return counter
 
-
+    print()
     return counter
