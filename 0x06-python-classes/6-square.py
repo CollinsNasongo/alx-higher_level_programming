@@ -2,11 +2,13 @@
 """A class that defines a Square
     Private instance attribute: size:
         - property def size(self)
-        - property setter def size(self, value)
+        - property setter def (self, value)
     Instantiation with optional size.
     Public instance method: def area(self).
     Public instance method: def my_print(self).
-
+    Instantiation with optional size and optional position.
+    Public instance method: def area(self).
+    Public instance method: def my_print(self).
 """
 
 
@@ -40,7 +42,6 @@ class Square:
     def position(self):
         """Getting the position"""
         return self.__position
-
 
     @position.setter
     def position(self, value):
